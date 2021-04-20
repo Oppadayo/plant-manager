@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native'
 import colors from '../styles/colors'
+import fonts from '../styles/fonts'
 
 interface ButtonProps extends TouchableOpacityProps {
     title: string
@@ -8,28 +9,26 @@ interface ButtonProps extends TouchableOpacityProps {
 
 const Button = ({title, ...props}: ButtonProps) =>{
     return(
-        <TouchableOpacity 
-            style={styles.button} 
-            {...props}
-        >
-            <Text style={styles.buttonText}>{title}</Text>
+        <TouchableOpacity style={styles.container} {...props}>
+            <Text style={styles.text}>
+                {title}
+            </Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    button: {
+    container: {
         backgroundColor: colors.green,
-        justifyContent: 'center',
-        alignItems: 'center',
+        height: 56,
         borderRadius: 16,
-        marginBottom: 10,
-        height: 55,
-        width: 56
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    buttonText: {
+    text: {
+        fontSize: 16,
         color: colors.white,
-        fontSize: 24
+        fontFamily: fonts.heading
     }
 })
 

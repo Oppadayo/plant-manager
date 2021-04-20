@@ -1,17 +1,23 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import Welcome from './src/screens/Welcome'
+import AppLoading from 'expo-app-loading'
+import { 
+  useFonts, 
+  Jost_400Regular, 
+  Jost_600SemiBold
+} from '@expo-google-fonts/jost'
+import Routes from './src/routes/index'
 
 export default function App(){
+  let [ fontsLoaded ] = useFonts({
+    Jost_400Regular,
+    Jost_600SemiBold
+  })
+
+  if(!fontsLoaded){
+    return <AppLoading />      
+  }
+
   return(
-    <Welcome/>
+    <Routes />
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center'
-  }
-})
