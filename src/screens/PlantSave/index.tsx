@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/core'
 import React, { useState } from 'react'
-import { Alert, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 import { SvgFromUri } from 'react-native-svg'
 import DateTimePicker from '@react-native-community/datetimepicker'
@@ -66,6 +66,10 @@ const PlantSave = () => {
     }
 
     return(
+        <ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.container}
+        >
         <View style={styles.container}>
             <View style={styles.plantInfo}>
                 <SvgFromUri 
@@ -123,6 +127,7 @@ const PlantSave = () => {
             </View>
             
         </View>
+        </ScrollView>
     )
 }
 

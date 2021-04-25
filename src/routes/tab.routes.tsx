@@ -2,8 +2,9 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import colors from '../styles/colors'
 import PlantSelect from '../screens/PlantSelect'
-import { MaterialIcons } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'
 import MyPlants from '../screens/MyPlants'
+import { Platform } from 'react-native'
 
 const AppTab = createBottomTabNavigator()
 
@@ -15,8 +16,8 @@ const AuthRoutes = () => {
                 inactiveTintColor: colors.heading,
                 labelPosition: 'beside-icon',
                 style: {
-                    paddingVertical: 20,
-                    height: 88
+                    paddingVertical: Platform.OS === 'ios' ? 20 : 5,
+                    height: Platform.OS === 'ios' ? 88 : 60
                 }
             }}
         >
@@ -24,28 +25,30 @@ const AuthRoutes = () => {
                 name='Nova Planta' 
                 component={PlantSelect} 
                 options={{
-                    tabBarIcon: (({ focused, size, color }) => {
-                        <MaterialIcons 
-                            name='add-circle-outline'
+                    tabBarIcon: (({ focused, size, color }) => (
+                        <Feather 
+                            name='plus-circle'
                             size={size}
                             color={color}
                         />
-                        focused ? colors.green : colors.heading
-                    })
+
+                    ))
+                    
                 }} />
 
             <AppTab.Screen 
                 name='Minhas Plantas' 
-                component={MyPlants} 
+                component={MyPlants}  
                 options={{
-                    tabBarIcon: (({focused, size, color }) => {
-                        <MaterialIcons 
-                            name='format-list-bulleted'
+                    tabBarIcon: (({focused, size, color }) => (
+                        <Feather 
+                            name='menu'
                             size={size}
                             color={color}
                         />
-                        focused ? colors.green : colors.heading
-                    })
+                        
+                        
+                    ))
                 }} />
         </AppTab.Navigator>
     )
