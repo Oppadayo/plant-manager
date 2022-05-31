@@ -10,7 +10,7 @@
 Você pode ver o Layout do projeto pelo link abaixo:
 
 
-- [Feedback Widget - Figma](https://www.figma.com/file/sPtgdHw6gl5iCtOmauO1y1/PlantManager-(Copy)?node-id=0%3A1)
+- [Plant Manager - Figma](https://www.figma.com/file/sPtgdHw6gl5iCtOmauO1y1/PlantManager-(Copy)?node-id=0%3A1)
 Lembrando que você precisa de uma conta no [Figma](https://www.figma.com) para acessar
 ## 🚀 Tecnologias
 - React Native
