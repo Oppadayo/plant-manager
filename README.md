@@ -1,5 +1,5 @@
 
-![App Screenshot](.github/mockup-app.png)
+![App Screenshot](/github/mockup-app.png)
 
 
 # Plant Manager
